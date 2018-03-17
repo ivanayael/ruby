@@ -1,0 +1,32 @@
+<%= form_with(model: peli, local: true) do |form| %>
+  <% if peli.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(peli.errors.count, "error") %> prohibited this peli from being saved:</h2>
+
+      <ul>
+      <% peli.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :nombre %>
+    <%= form.text_field :nombre, id: :peli_nombre %>
+  </div>
+
+  <div class="field">
+    <%= form.label :genero %>
+    <%= form.text_area :genero, id: :peli_genero %>
+  </div>
+
+  <div class="field">
+    <%= form.label :imagen %>
+    <%= form.file_field :imagen, id: :peli_imagen %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

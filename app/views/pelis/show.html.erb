@@ -1,0 +1,17 @@
+<p>
+  <strong>Nombre:</strong>
+  <%= @peli.nombre %>
+</p>
+
+<p>
+  <strong>Genero:</strong>
+  <%= @peli.genero %>
+</p>
+
+<p>
+  <strong>Imagen:</strong>
+  <%= image_tag(@peli.imagen_url, :width => 600) if @peli.imagen.present? %>
+</p>
+
+<%= link_to 'Editar', edit_peli_path(@peli) %> |
+<%= link_to 'Volver Atrás', pelis_path %>
